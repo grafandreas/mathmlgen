@@ -1,0 +1,10 @@
+<math display = 'block'>
+  <declare occurrence='<none>' type='real'>
+    <ci>x</ci>
+    <cn>1.0</cn>
+  </declare>
+  <declare occurrence='<none>' type='real'>
+    <ci>y</ci>
+    <cn>2.0</cn>
+  </declare>
+</math>

@@ -79,7 +79,7 @@ class Generator {
 	def generate(Document doc) {
 		this.bib = if( config.prefix.length > 0 ) config.prefix+ "::" else ""
 		
-		doc.childNodes.toList.map[process].join(";\n")
+		doc.childNodes.toList.map[process].join(";"+System.getProperty("line.separator"))
 	}
 	
 	def dispatch process(Node n) '''
@@ -89,7 +89,7 @@ class Generator {
 		println(e.tagName)
 		println(e)
 		switch(e.tagName) {
-			case "math" : {e.childNodes.toList.filter(Element).head.process}
+			case "math" : {e.childNodes.toList.filter(Element).map[process].join(System.getProperty("line.separator"))}
 			case "apply" : e.childElements.head.process
 			case "plus" : p_plus(e)
 			case "times" : p_times(e)
